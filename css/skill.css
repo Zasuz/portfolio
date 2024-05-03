@@ -1,0 +1,31 @@
+@keyframes scroll-up {
+    from {
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100%);
+    }
+}
+@keyframes scroll-down {
+    from {
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+.animation-scroll-down{
+    animation: scroll-down 10s linear infinite;
+}
+.animation-scroll-up {
+    animation: scroll-up 10s linear infinite;
+}
+.slick-dots li button {
+    color: black !important;
+    background: black !important;
+}
+
+.icon-slides:hover .animation-scroll-up,
+.icon-slides:hover .animation-scroll-down {
+    animation-play-state: paused;
+}
