@@ -1,0 +1,61 @@
+.pacman {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    animation: move 8s infinite linear;
+    background: linear-gradient(270deg, #F19999 -7.96%, #DB0000 54.87%);
+    display: block;
+    z-index:10
+}
+
+.pacmanTop,
+.pacmanBottom {
+    background: radial-gradient(52.23% 50% at 52.23% 50%, #DFF300 26.1%, #EDF86E 77.5%, #F6FBBC 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+.clip-point {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.pacmanTop {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    animation: mouthTop 0.3s infinite alternate;
+}
+
+.pacmanBottom {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    animation: mouthBottom 0.3s infinite alternate;
+}
+
+@keyframes mouthTop {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg); /* Xoay 45 độ */
+    }
+}
+
+@keyframes mouthBottom {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(90vw);
+    }
+}
+
