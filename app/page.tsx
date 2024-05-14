@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import { Carousel, Progress} from 'antd';
 import FadeIn from "@/components/Fade";
 import "../public/background-header.png";
-import "../css/Test.css"
+
 import Skill from "@/components/Skill";
 import AboutMe from "@/components/AboutMe";
 import Project from "@/components/Project";

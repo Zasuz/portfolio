@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import "../css/Skill.css";
+import "../css/skill.css";
 import {SiFigma, SiJavascript, SiPostman, SiReact, SiRedux, SiSpring, SiTailwindcss} from "react-icons/si";
 import {FaJava} from "react-icons/fa";
 import {RiNextjsLine} from "react-icons/ri";
