@@ -5,7 +5,11 @@ import {FaJava} from "react-icons/fa";
 import {RiNextjsLine} from "react-icons/ri";
 
 const Skill = () => {
-    const [selectedItem, setSelectedItem] = useState({icon: <SiReact/>, title: "Click on item to see details", content: ""});
+    const [selectedItem, setSelectedItem] = useState({
+        icon: <SiReact/>,
+        title: "Click on item to see details",
+        content: ""
+    });
 
     const [isAnimation, setIsAnimation] = useState(false);
     const backgroundColorItem = [
@@ -18,7 +22,8 @@ const Skill = () => {
         "#ffdb99", // new color
         "#ffc8b5", // new color
         "#99CCFF"  // new color
-    ];    const animationRef = useRef<HTMLDivElement>(null);
+    ];
+    const animationRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         setIsAnimation(true)
         if (animationRef.current) {
@@ -53,15 +58,15 @@ const Skill = () => {
         title: "TailwindCSS",
         content: "I have knowledge about TailwindCSS to design website. I have experience in building a website with TailwindCSS. I have knowledge about TailwindCSS to design website faster.",
     }, {
-        icon:<SiJavascript />,
+        icon: <SiJavascript/>,
         title: "JavaScript",
         content: "I have knowledge about TailwindCSS to design website. I have experience in building a website with TailwindCSS. I have knowledge about TailwindCSS to design website faster.",
     }, {
-        icon: <SiPostman />,
+        icon: <SiPostman/>,
         title: "PostMan",
         content: "I have knowledge about TailwindCSS to design website. I have experience in building a website with TailwindCSS. I have knowledge about TailwindCSS to design website faster.",
     }, {
-        icon: <SiFigma />,
+        icon: <SiFigma/>,
         title: "Figma",
         content: "I have knowledge about TailwindCSS to design website. I have experience in building a website with TailwindCSS. I have knowledge about TailwindCSS to design website faster.",
     }]
@@ -70,17 +75,19 @@ const Skill = () => {
         setSelectedItem(arrayIcon[index])
     }
     return (
-        <div className=" bg-main flex bg-gray-50 text-black flex-row justify-between w-screen relative overflow-hidden">
-            <div  className={`w-1/2 `}>
-                <div className={"pl-32 pt-5 mb-16"}>
+        <div
+            className=" gap-5 md:gap-0 bg-main flex bg-gray-50 text-black flex-row justify-between w-screen relative overflow-hidden">
+            <div className={`w-1/2 `}>
+                <div className={"pl-8 md:pl-32 pt-5 mb-16"}>
                     <h1 className={"text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
                     <h1 className={"font-bold  text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-black"}>
                         Skill</h1>
                 </div>
 
-                <div ref={animationRef} className={`min-h-96 px-10 lg:px-32 py-10 flex flex-col text-white bg-black w-full h-min  drop-shadow-2xl ${isAnimation ? "animate__animated animate__fadeInLeft" : ""}`}>
-                    <div className={"flex justify-between items-center"}>
-                        <h1 className={"text-4xl lg:text-7xl font-bold mb-3"}>
+                <div ref={animationRef}
+                     className={`min-h-96 px-6 md:px-10 lg:px-32 py-10 flex flex-col text-white bg-black w-full h-min  drop-shadow-2xl ${isAnimation ? "animate__animated animate__fadeInLeft" : ""}`}>
+                    <div className={"flex flex-col md:flex-row  justify-between items-center"}>
+                        <h1 className={"text-xl md:text-4xl lg:text-7xl font-bold mb-3"}>
                             {selectedItem.title}
                         </h1>
                         {
@@ -95,10 +102,10 @@ const Skill = () => {
                 </div>
             </div>
 
-            <div className={"flex gap-10 flex-row justify-end h-[100vh] w-1/2 pr-5 lg:pr-32"}>
-                <div className={"w-1/3 flex flex-col justify-center items-center origin-center -rotate-90"}>
+            <div className={"flex gap-3 md:gap-10 flex-row justify-end h-[100vh] w-1/2 pr-1 md:pr-5 lg:pr-32"}>
+                <div className={"w-1/3 hidden md:flex flex-col justify-center items-center origin-center -rotate-90"}>
                     <h1 style={{WebkitTextStroke: "2px black"}}
-                        className={"text-7xl  text-white whitespace-nowrap"}>Have Knowledge</h1>
+                        className={"text-7xl text-white whitespace-nowrap"}>Have Knowledge</h1>
                     <h2 className={"text-lg text-gray-400 whitespace-nowrap"}>Click on each item to see detail</h2>
                 </div>
 
@@ -106,7 +113,7 @@ const Skill = () => {
                     Array.from({length: 2}).map((value, index1) => {
                         return (
                             <div key={index1}
-                                 className={"icon-slides w-1/4 h-full flex flex-col overflow-hidden text-black relative " +
+                                 className={"icon-slides w-1/2 md:w-1/4 h-full flex flex-col overflow-hidden text-black relative " +
                                      "before:w-full before:h-12 before:bg-before-opacity before:absolute before:top-0 before:z-10 " +
                                      "after:w-full after:h-12  after:bg-after-opacity after:absolute after:bottom-0 "}>
                                 {

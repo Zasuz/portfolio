@@ -76,10 +76,10 @@ export default function Home() {
             </div>
             <div className={"flex flex-col  justify-end align-end items-center relative h-1/3"}>
                 <text id={"text"}
-                      className={"text-transparent bg-[#565656] bg-clip-text text-shadow-sm text-9xl text-[#0CAFA2] uppercase stroke-black"}>Portfolio
+                      className={"text-transparent bg-[#565656] bg-clip-text text-shadow-sm text-5xl lg:text-9xl text-[#0CAFA2] uppercase stroke-black"}>Portfolio
                 </text>
                 <div
-                    className={`${isFinishAnimation ? "animate-infinity" : "animate-clip"}  absolute bottom-0 left-1/2 text-9xl -translate-x-1/2  uppercase `}>
+                    className={`${isFinishAnimation ? "animate-infinity" : "animate-clip"}  absolute bottom-0 left-1/2 text-5xl lg:text-9xl -translate-x-1/2  uppercase `}>
                     Portfolio
                 </div>
             </div>

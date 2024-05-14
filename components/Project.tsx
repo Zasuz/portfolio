@@ -4,8 +4,11 @@ import {Button, Carousel, Spin} from "antd";
 import React, {useEffect, useRef, useState} from "react";
 import storage from "@/firebase.config";
 import {getDownloadURL, listAll, ListResult, ref} from "firebase/storage"
+import { useMediaQuery } from 'react-responsive';
 
 const Project = () => {
+    const isMobile = useMediaQuery({ maxWidth: 768 }) // 768px is usually the breakpoint for 'md'
+
     const [isAnimation, setIsAnimation] = useState(false)
     const animationRef = useRef<HTMLDivElement>(null);
     const [isLoading, setIsLoading] = useState(true)
@@ -175,28 +178,27 @@ const Project = () => {
     }
     return (
         <div
-             className={` bg-main flex flex-row w-screen h-screen relative overflow-hidden`}>
-            <div className={"pt-10 px-4 lg:px-24 w-1/3 h-full overflow-scroll overflow-x-hidden direction-rtl relative"}>
+             className={` bg-main flex flex-col md:flex-row w-screen h-screen relative overflow-hidden`}>
+            <div className={"pt-10 px-0 md:px-4 lg:px-24 w-full md:w-1/3 h-full overflow-scroll overflow-x-scroll md:overflow-x-hidden direction-rtl relative"}>
                 <div className={"direction-ltr"}>
                     <h1 className={"text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
                     <h1 className={"font-bold mb-10 text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-black"}>
                         Project</h1>
-                    <div className={"gap-10 flex flex-col justify-center"}>
+                    <div className={"gap-10 flex flex-col md:justify-center items-center"}>
                         {
-                            projectItem.map((value, index) => {
-                                return (
-                                    <ProjectItem isAnimation={isAnimation} title={value.title} member={value.member}
-                                                 technology={value.techUse}
-                                                 key={index} handleClickItem={() => handleClickItem(index)}/>
-                                )
-                            })
+                                        projectItem.map((value, index) => {
+                                            return (
+                                                <ProjectItem isAnimation={isAnimation} title={value.title} member={value.member}
+                                                             technology={value.techUse}
+                                                             key={index} handleClickItem={() => handleClickItem(index)}/>
+                                            )
+                                        })
                         }
-
                     </div>
                 </div>
             </div>
             <div ref={animationRef}
-                 className={`${isAnimation == true ? "animate__animated animate__fadeInRight" : ""} w-2/3 h-full bg-white rounded-l-3xl text-black pl-16 pt-10 pr-10 details-carousel overflow-y-scroll `}>
+                 className={`${isAnimation == true ? "animate__animated animate__fadeInRight" : ""} w-full md:w-2/3 h-full bg-white rounded-l-3xl text-black pl-4 pr-4 md:pl-16 pt-10 md:pr-10 details-carousel overflow-y-scroll `}>
                 <h6 className={"text-gray-400"}>Details</h6>
                 <div className={"flex flex-row justify-between items-center"}>
                     <h1 className={"text-2xl lg:text-6xl font-medium mb-8 relative after:absolute after:-bottom-3 after:w-16 after:h-1 after:bg-black after:left-0"}>{projectSelected.title}</h1>
@@ -226,7 +228,7 @@ const Project = () => {
                 }
 
                 <div className={"w-full h-auto flex flex-col lg:flex-row gap-10"}>
-                    <div className={" w-full lg:w-3/12 shadow-2xl bg-white p-6 rounded-2xl"}>
+                    <div className={"w-full lg:w-3/12 shadow-2xl bg-white p-6 rounded-2xl"}>
                         <h1 className={"mb-4 font-medium text-lg"}>About Project</h1>
                         <p>{projectSelected.about}</p>
                     </div>

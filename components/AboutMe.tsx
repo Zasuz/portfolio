@@ -39,14 +39,14 @@ const AboutMe = () => {
     const background = "/background-header.png"
     return (
         <div
-            className={"flex w-screen overflow-y-scroll h-screen flex-row justify-center text-end pl-32 pr-8 relative  pt-5 pb-10 lg:pb-0 text-black bg-main"}>
+            className={"flex w-screen overflow-y-scroll h-screen flex-row justify-center text-end pl-5 md:pl-32 pr-8 relative  pt-5 pb-10 lg:pb-0 text-black bg-main"}>
             <img src={background} className={"object-fill absolute bottom-7  left-0 w-full h-48 z-0"}/>
             <div className={"w-full lg:w-1/2 text-start flex justify-between flex-col"}>
                 <h1 className={"text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
                 <h1 className={"font-bold mb-10 text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-1/4 after:h-1 after:bg-black"}>
                     About me</h1>
                 <p>{aboutMe}</p>
-                <div className={" mb-9 lg:mb-0 flex flex-col w-full lg:flex-row mt-10 rounded-2xl bg-white shadow-2xl py-3 px-5 z-10 relative"}>
+                <div className={"mb-9 lg:mb-0 flex flex-col w-full lg:flex-row mt-10 rounded-2xl bg-white shadow-2xl py-3 px-5 z-10 relative"}>
                     <table className={"text-md w-full lg:w-1/2"}>
                         <tbody>
                         {
