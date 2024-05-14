@@ -78,9 +78,9 @@ const Skill = () => {
                         Skill</h1>
                 </div>
 
-                <div ref={animationRef} className={`min-h-96 px-32 py-10 flex flex-col text-white bg-black w-full h-min  drop-shadow-2xl ${isAnimation ? "animate__animated animate__fadeInLeft" : ""}`}>
+                <div ref={animationRef} className={`min-h-96 px-10 lg:px-32 py-10 flex flex-col text-white bg-black w-full h-min  drop-shadow-2xl ${isAnimation ? "animate__animated animate__fadeInLeft" : ""}`}>
                     <div className={"flex justify-between items-center"}>
-                        <h1 className={"text-7xl font-bold mb-3"}>
+                        <h1 className={"text-4xl lg:text-7xl font-bold mb-3"}>
                             {selectedItem.title}
                         </h1>
                         {
@@ -90,13 +90,12 @@ const Skill = () => {
                             })
                         }
                     </div>
-
                     <p className={"mb-2"}>
                         {selectedItem.content}                    </p>
                 </div>
             </div>
 
-            <div className={"flex gap-10 flex-row justify-end h-[100vh] w-1/2 pr-32"}>
+            <div className={"flex gap-10 flex-row justify-end h-[100vh] w-1/2 pr-5 lg:pr-32"}>
                 <div className={"w-1/3 flex flex-col justify-center items-center origin-center -rotate-90"}>
                     <h1 style={{WebkitTextStroke: "2px black"}}
                         className={"text-7xl  text-white whitespace-nowrap"}>Have Knowledge</h1>
@@ -122,7 +121,7 @@ const Skill = () => {
                                                                 onClick={() => !isAnimation ? handleClickItem(index) : ""}
                                                                 key={index}
                                                                 style={{backgroundColor: backgroundColorItem[index % backgroundColorItem.length]}}
-                                                                className={`text-black  cursor-pointer hover:text-teal-400 hover:scale-[1.2] transition duration-500 py-7 h-54 w-full text-center rounded-2xl m-auto flex flex-col justify-center items-center mb-10`}>
+                                                                className={`text-black  cursor-pointer hover:text-teal-400 hover:scale-[1.2] transition duration-500 py-7 h-36 lg:h-54 w-full text-center rounded-2xl m-auto flex flex-col justify-center items-center mb-10`}>
                                                                 {React.cloneElement(value.icon, {
                                                                     fontSize: 54,
                                                                     className: `mb-3`

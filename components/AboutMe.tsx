@@ -39,15 +39,15 @@ const AboutMe = () => {
     const background = "/background-header.png"
     return (
         <div
-            className={"flex w-screen h-screen flex-row justify-center text-end pl-32 pr-8 relative  pt-5 text-black bg-main"}>
+            className={"flex w-screen overflow-y-scroll h-screen flex-row justify-center text-end pl-32 pr-8 relative  pt-5 pb-10 lg:pb-0 text-black bg-main"}>
             <img src={background} className={"object-fill absolute bottom-7  left-0 w-full h-48 z-0"}/>
-            <div className={"w-1/2 text-start flex justify-between flex-col"}>
+            <div className={"w-full lg:w-1/2 text-start flex justify-between flex-col"}>
                 <h1 className={"text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
                 <h1 className={"font-bold mb-10 text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-1/4 after:h-1 after:bg-black"}>
                     About me</h1>
                 <p>{aboutMe}</p>
-                <div className={"flex flex-row mt-10 rounded-2xl bg-white shadow-2xl py-3 px-5 z-10 relative"}>
-                    <table className={"text-md w-1/2"}>
+                <div className={" mb-9 lg:mb-0 flex flex-col w-full lg:flex-row mt-10 rounded-2xl bg-white shadow-2xl py-3 px-5 z-10 relative"}>
+                    <table className={"text-md w-full lg:w-1/2"}>
                         <tbody>
                         {
                             dataTable1.map((detail, index) => {
@@ -61,7 +61,7 @@ const AboutMe = () => {
                         }
                         </tbody>
                     </table>
-                    <table className={"text-md w-1/2"}>
+                    <table className={"text-md w-full lg:w-1/2"}>
                         <tbody>
                         {
                             dataTable2.map((detail, index) => {
@@ -78,11 +78,11 @@ const AboutMe = () => {
                     <Button href={"https://www.google.com/intl/vi/gmail/about/"} type={"primary"} className={"absolute -top-4 right-4 "}>Email me</Button>
                 </div>
 
-                <h1 className={"text-5xl my-12 text-white after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-white"}>Trần
+                <h1 className={" hidden lg:inline text-5xl my-12 text-white after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-white"}>Trần
                     Gia Lâm</h1>
             </div>
 
-            <div className={"w-1/2 flex items-center justify-center relative overflow-hidden"}>
+            <div className={"w-1/2 hidden lg:flex items-center justify-center relative overflow-hidden"}>
                 <img src={"/cv.jpg"} className={"w-7/12 rounded-3xl z-10 shadow-2xl"}/>
                 <div className={"h-full absolute w-64 bg-white top-0 right-32 z-0"}>
                 </div>

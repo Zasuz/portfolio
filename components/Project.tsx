@@ -176,7 +176,7 @@ const Project = () => {
     return (
         <div
              className={` bg-main flex flex-row w-screen h-screen relative overflow-hidden`}>
-            <div className={"pt-10 px-24 w-1/3 h-full overflow-scroll overflow-x-hidden direction-rtl relative"}>
+            <div className={"pt-10 px-4 lg:px-24 w-1/3 h-full overflow-scroll overflow-x-hidden direction-rtl relative"}>
                 <div className={"direction-ltr"}>
                     <h1 className={"text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
                     <h1 className={"font-bold mb-10 text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-black"}>
@@ -199,10 +199,10 @@ const Project = () => {
                  className={`${isAnimation == true ? "animate__animated animate__fadeInRight" : ""} w-2/3 h-full bg-white rounded-l-3xl text-black pl-16 pt-10 pr-10 details-carousel overflow-y-scroll `}>
                 <h6 className={"text-gray-400"}>Details</h6>
                 <div className={"flex flex-row justify-between items-center"}>
-                    <h1 className={"text-6xl font-medium mb-8 relative after:absolute after:-bottom-3 after:w-16 after:h-1 after:bg-black after:left-0"}>{projectSelected.title}</h1>
+                    <h1 className={"text-2xl lg:text-6xl font-medium mb-8 relative after:absolute after:-bottom-3 after:w-16 after:h-1 after:bg-black after:left-0"}>{projectSelected.title}</h1>
                     <div className={"flex flex-row gap-5"}>
                         <Button type="primary" href={projectSelected.linkSource} className={""}>Link Source</Button>
-                        <Button type="primary" href={projectSelected.linkDeloy}>Go to Website</Button>
+                        <Button type="primary" href={projectSelected.linkDeloy} className={projectSelected.linkDeloy == "" ? "hidden": "block"}>Go to Website</Button>
                     </div>
                 </div>
                 {
@@ -225,14 +225,12 @@ const Project = () => {
                         </Carousel>
                 }
 
-                <div className={"w-full h-auto flex flex-row gap-10"}>
-                    <div className={" w-3/12 shadow-2xl bg-white p-6 rounded-2xl"}>
+                <div className={"w-full h-auto flex flex-col lg:flex-row gap-10"}>
+                    <div className={" w-full lg:w-3/12 shadow-2xl bg-white p-6 rounded-2xl"}>
                         <h1 className={"mb-4 font-medium text-lg"}>About Project</h1>
-                        <p>{projectSelected.about}
-
-                        </p>
+                        <p>{projectSelected.about}</p>
                     </div>
-                    <div className={" w-9/12 shadow-2xl bg-white p-6 rounded-2xl flex flex-col"}>
+                    <div className={" w-full lg:w-9/12 shadow-2xl bg-white p-6 rounded-2xl flex flex-col"}>
                         <h1 className={"mb-4 font-medium text-lg"}>Information</h1>
                         <table className={"w-full rounded-2xl border-2 border-gray-100 flex-grow"}>
                             <tbody>
@@ -265,7 +263,7 @@ const Project = () => {
                         </table>
                         <div className={"flex flex-row gap-5 my-5 items-center justify-end"}>
                             <Button type="primary" href={projectSelected.linkSource} className={""}>Link Source</Button>
-                            <Button type="primary" href={projectSelected.linkDeloy}>Go to Website</Button>
+                            <Button type="primary" href={projectSelected.linkDeloy} className={projectSelected.linkDeloy ==""? "hidden":"block"}>Go to Website</Button>
                         </div>
                     </div>
                 </div>
