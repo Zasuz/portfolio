@@ -1,5 +1,4 @@
-import { SiSpring } from "react-icons/si";
-import React, {useState} from "react";
+import React from "react";
 
 const ProjectItem = ({title ,technology,member,handleClickItem,isAnimation} :{title : string,technology: string[] ,member:number ,handleClickItem: React.MouseEventHandler<HTMLDivElement>|undefined,isAnimation:boolean}) => {
 
@@ -16,7 +15,7 @@ const ProjectItem = ({title ,technology,member,handleClickItem,isAnimation} :{ti
                 <text className={"w-1/3 text-end"}></text>
             </div>
             <div className={"w-56 h-full absolute top-0 -right-20 "}>
-                <img className={"rotate-90"} src={"/blue-wavy.png"}/>
+                <img alt={""} className={"rotate-90"} src={"/blue-wavy.png"}/>
             </div>
         </div>
     )

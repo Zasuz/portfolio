@@ -1,22 +1,16 @@
 "use client"
 import React, {useEffect, useState} from "react";
-import {Button, Carousel, Progress} from 'antd';
+import { Carousel, Progress} from 'antd';
 import FadeIn from "@/components/Fade";
 import "../public/background-header.png";
 import "../css/Test.css"
-import ProjectItem from "@/components/ProjectItem";
 import Skill from "@/components/Skill";
 import AboutMe from "@/components/AboutMe";
 import Project from "@/components/Project";
 
 export default function Home() {
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
 
-    const ballImg = "./ball.png"
-
-    const avatar = "/avatar.jpg"
-    const avatarCV = "/cv.jpg"
     const [isFinishAnimation, setIsFinishAnimation] = useState(false);
     const [letters, setLetters] = useState(["P", "o", "r", "t", "f", "o", "l", "i", "o"]);
     const [isBlock, setIsBlock] = useState(Array(letters.length).fill(false));

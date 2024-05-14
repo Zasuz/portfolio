@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import 'animate.css';
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
