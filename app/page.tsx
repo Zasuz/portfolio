@@ -7,6 +7,7 @@ import "../public/background-header.png";
 import Skill from "@/components/Skill";
 import AboutMe from "@/components/AboutMe";
 import Project from "@/components/Project";
+import Experience from "@/components/Experience";
 
 export default function Home() {
 
@@ -61,7 +62,7 @@ export default function Home() {
             </video>
 
             <div className={`${isClick ? "animate-click h-screen w-screen" : "hidden"}  flex flex-col bg-white z-10 absolute top-0 text-black`}>
-                <Carousel swipeToSlide={true} draggable={true} className={"h-full w-screen text-white"}>
+                <Carousel  className={"h-full w-screen text-white"}>
                     <FadeIn>
                         <AboutMe/>
                     </FadeIn>
@@ -71,8 +72,10 @@ export default function Home() {
                     <FadeIn>
                        <Skill/>
                     </FadeIn>
+                    <FadeIn>
+                        <Experience/>
+                    </FadeIn>
                 </Carousel>
-
             </div>
             <div className={"flex flex-col  justify-end align-end items-center relative h-1/3"}>
                 <text id={"text"}
@@ -85,7 +88,6 @@ export default function Home() {
             </div>
             <div className={"flex-col h-1/2 text-center flex justify-center items-center"}>
                 <Progress percent={percent} className={"w-9/12"}/>
-
                         <p className={` ${ percent === 100 ? "visible":"invisible"} mt-10 animate__animated animate__pulse animate__infinite text-white`}>Nhấn vào
                             đây để tiếp
                             tục ...</p>

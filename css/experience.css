@@ -1,0 +1,27 @@
+.clip-path-upper {
+    clip-path: polygon(0 0, 85% 0, 85% 100%, 0% 100%);
+
+    transition: clip-path 2s ease-in-out;
+}
+.clip-path-upper2{
+    clip-path: polygon(0 0, 15% 0, 15% 100%, 0% 100%);
+    transition: clip-path 2s ease-in-out;
+}
+
+.custom-timeline .ant-timeline-item-tail {
+    background-color: #e1e1e1;
+}
+
+.ant-timeline-item{
+    min-height: 70px !important;
+}
+
+/*.clip-path-down:hover {*/
+/*    clip-path: polygon(0 100%, 50% 100%, 100% 50%, 100% 0%, 0% 0%);*/
+/*    z-index: 10;*/
+/*}*/
+
+/*.clip-path-upper:hover {*/
+/*    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);*/
+/*    z-index: 10;*/
+/*}*/
