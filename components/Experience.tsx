@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {Spin, Timeline} from "antd";
 
 const Experience = () => {
-    const [isClick, setIsClick] = useState(false);
+    const [isClick, setIsClick] = useState(true);
     const itemPlans = [
         {
             title: "Short-Term",
