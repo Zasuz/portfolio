@@ -135,7 +135,7 @@ const Experience = () => {
                             {title: "Achievement", visible: "invisible", width: "w-full", items: itemAchievement} :
                             {title: "Experience", visible: "visible", width: "w-9/12", items: itemExperience})
                         return (
-                            <div>
+                            <div key={index}>
                                 <div className={`flex flex-col transition duration-500 ${isClick ? "delay-500" : " -translate-x-24  delay-1000"}`}>
                                     <h1 className={`${customObjectForEachTimeLine.visible} text-2xl text-green-primary font-bold uppercase tracking-widest`}>Portfolio</h1>
                                     <h1 className={"font-bold mb-10 text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-black"}>
@@ -155,7 +155,7 @@ const Experience = () => {
                     {
                         itemPlans.map((itemPlan, index) => {
                             return (
-                                <div className={`${index == 1 ? "ml-10" : null}`}>
+                                <div key={index} className={`${index == 1 ? "ml-10" : null}`}>
                                     <h3 className={" text-2xl font-bold"}>{itemPlan.title}</h3>
                                     <p>{itemPlan.content}</p>
                                     <h6 className={"mt-5 font-medium text-lg"}>To do list in {itemPlan.title}</h6>
