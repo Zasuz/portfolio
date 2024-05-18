@@ -1,4 +1,5 @@
 import {Button} from "antd";
+import {FaArrowRightLong} from "react-icons/fa6";
 
 const AboutMe = () => {
     const detailsMe = [
@@ -82,10 +83,17 @@ const AboutMe = () => {
                     Gia Lâm</h1>
             </div>
 
-            <div className={"w-1/2 hidden lg:flex items-center justify-center relative overflow-hidden"}>
-                <img src={"/cv.jpg"} className={"w-7/12 rounded-3xl z-10 shadow-2xl"}/>
-                <div className={"h-full absolute w-64 bg-white top-0 right-32 z-0"}>
+            <div className={"w-1/2 hidden lg:flex items-center justify-between relative overflow-hidden"}>
+                <img src={"/cv.jpg"} className={"w-7/12 rounded-3xl z-10 shadow-2xl ml-16"}/>
+                <div className={"h-full absolute w-52 bg-white top-0 right-44 z-0 "}>
                 </div>
+                <div className={"w-3/12  animate__infinite animate__pulse animate__animated text-gray-600 flex justify-center items-center align-middle"}>
+                    <i className={"mr-3"}>
+                        Swipe to see more
+                    </i>
+                    <FaArrowRightLong className={"text-lg"}/>
+                </div>
+
             </div>
         </div>
     )

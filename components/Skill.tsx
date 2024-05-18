@@ -98,7 +98,8 @@ const Skill = () => {
                         }
                     </div>
                     <p className={"mb-2"}>
-                        {selectedItem.content}                    </p>
+                        {selectedItem.content}
+                    </p>
                 </div>
             </div>
 
