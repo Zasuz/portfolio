@@ -128,17 +128,28 @@ const Experience = () => {
     return (
         <div className={"text-black bg-main h-screen w-screen overflow-x-hidden overflow-y-scroll  "}>
             <div onClick={handleClickLeft}
-                 className={`flex clip-path-upper  absolute w-screen h-screen top-0 left-0 bg-white pl-32 pt-5 ${isClick ? "" : "clip-path-upper2 "} z-10 `}>
+                 className={` overflow-y-scroll flex md:flex-row flex-col clip-path-upper  absolute w-screen h-screen top-0 left-0 bg-white pl-2 md:pl-32 pt-5 ${isClick ? "" : "clip-path-upper2 "} z-10 `}>
                 {
                     Array.from({length: 2}).map((_, index) => {
                         const customObjectForEachTimeLine = (index == 1 ?
-                            {title: "Achievement", visible: "invisible", width: "w-full", items: itemAchievement} :
-                            {title: "Experience", visible: "visible", width: "w-9/12", items: itemExperience})
+                            {
+                                title: "Achievement",
+                                visible: "invisible md:invisible",
+                                width: "w-9/12 md:w-full",
+                                items: itemAchievement
+                            } :
+                            {
+                                title: "Experience",
+                                visible: "invisible md:visible",
+                                width: "w-9/12 md:w-9/12",
+                                items: itemExperience
+                            })
                         return (
                             <div key={index}>
-                                <div className={`flex flex-col transition duration-500 ${isClick ? "delay-500" : " -translate-x-24  delay-1000"}`}>
+                                <div
+                                    className={`flex flex-col transition duration-500 ${isClick ? "delay-500" : " -translate-x-24  delay-1000"}`}>
                                     <h1 className={`${customObjectForEachTimeLine.visible} text-2xl text-green-primary font-bold uppercase tracking-widest`}>Portfolio</h1>
-                                    <h1 className={"font-bold mb-10 text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-black"}>
+                                    <h1 className={"font-bold mb-10 text-xl md:text-3xl text-black after:absolute after:-bottom-3 after:left-0 relative after:w-16 after:h-1 after:bg-black"}>
                                         {customObjectForEachTimeLine.title}</h1>
                                 </div>
                                 <Timeline className={`${customObjectForEachTimeLine.width}`}
@@ -150,12 +161,14 @@ const Experience = () => {
                 }
             </div>
             <div onClick={handleClickRight}
-                 className={`flex absolute w-screen h-screen top-0 left-0 bg-black text-white pr-32 pt-5 `}>
-                <div className={"w-8/12 pl-72 flex flex-row mt-20 justify-evenly gap-10"}>
+                 className={` flex absolute w-screen h-screen top-0 left-0 bg-black text-white pr-3 md:pr-32 pt-5 overflow-y-scroll overflow-x-hidden`}>
+                <div
+                    className={`${isClick ? "animate__animated animate__fadeOut animate__delay-1s" : " animate__animated animate__fadeIn animate__delay-1s"} 
+                w-full md:w-8/12 pl-20 md:pl-72 flex flex-col md:flex-row mt-20 justify-evenly gap-10`}>
                     {
                         itemPlans.map((itemPlan, index) => {
                             return (
-                                <div key={index} className={`${index == 1 ? "ml-10" : null}`}>
+                                <div key={index} className={`${index == 1 ? "ml-3 md:ml-10" : null}`}>
                                     <h3 className={" text-2xl font-bold"}>{itemPlan.title}</h3>
                                     <p>{itemPlan.content}</p>
                                     <h6 className={"mt-5 font-medium text-lg"}>To do list in {itemPlan.title}</h6>
@@ -169,12 +182,12 @@ const Experience = () => {
                 </div>
                 <div
                     className={`w-4/12 flex flex-col text-white items-end transition duration-500  ${isClick ? "translate-x-28  delay-1000" : " delay-500"}`}>
-                    <h1 className={"text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
-                    <h1 className={"font-bold mb-10 text-3xl text-white after:absolute after:-bottom-3 after:right-0 relative after:w-16 after:h-1 after:bg-white"}>
-                        Plan for Future</h1>
+                    <h1 className={"md:visible invisible text-2xl text-green-primary font-bold uppercase tracking-widest"}>Portfolio</h1>
+                    <h1 className={"font-bold mb-10 text-xl md:text-3xl text-white after:absolute after:-bottom-3 after:right-0 relative after:w-16 after:h-1 after:bg-white"}>
+                        Plan</h1>
 
 
-                    <h1 className={`${ !isClick ? "animate__animated animate__fadeOut": "animate__animated animate__fadeIn animate__delay-1s"} origin-right text-lg flex-grow rotate-90 flex items-center text-white stroke-1 stroke-white`}>Click
+                    <h1 className={`${!isClick ? "animate__animated animate__fadeOut" : "animate__animated animate__fadeIn animate__delay-1s"} origin-right text-lg flex-grow rotate-90 flex items-center text-white stroke-1 stroke-white`}>Click
                         on here to expand</h1>
                 </div>
             </div>
